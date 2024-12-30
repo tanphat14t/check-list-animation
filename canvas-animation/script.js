@@ -11,19 +11,21 @@ let lastMouseY = -1;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   engine = Engine.create();
-
   engine.world.gravity.y = 0;
-  addBoundaries();
+
+  addBoudaries();
 
   for (let i = 0; i < 12; i++) {
-    let x = random(50, width - 100);
-    let y = random(50, height - 100);
+    let x = random(100, width - 100);
+    let y = random(100, height - 100);
     items.push(new Item(x, y, `./images/img${i + 1}.webp`));
   }
 }
 
-function addBoundaries() {
+function addBoudaries() {
   const thickness = 50;
+  console.log("addBoudaries running");
+
   World.add(engine.world, [
     Bodies.rectangle(width / 2, -thickness / 2, width, thickness, {
       isStatic: true,
@@ -34,7 +36,7 @@ function addBoundaries() {
     Bodies.rectangle(-thickness / 2, height / 2, thickness, height, {
       isStatic: true,
     }),
-    Bodies.rectangle(width + thickness / 2, height / 2, thickness, height, {
+    Bodies.rectangle(width + thickness / 2, height / 2, thickness, width, {
       isStatic: true,
     }),
   ]);
@@ -42,7 +44,7 @@ function addBoundaries() {
 
 function draw() {
   background("black");
-  Engine.update(engine); // Cập nhật trạng thái vật lý
+  Engine.update(engine);
   items.forEach((item) => item.update());
 }
 
@@ -52,10 +54,10 @@ class Item {
       frictionAir: 0.075,
       restitution: 0.25,
       density: 0.002,
-      angle: Math.random() + Math.PI * 2,
+      angle: Math.random() * Math.PI * 2, //đây
     };
-    this.body = Bodies.rectangle(x, y, 100, 200, options);
 
+    this.body = Bodies.rectangle(x, y, 100, 200, options);
     World.add(engine.world, this.body);
 
     this.div = document.createElement("div");
@@ -67,7 +69,6 @@ class Item {
     this.div.appendChild(img);
     document.body.appendChild(this.div);
   }
-
   update() {
     this.div.style.left = `${this.body.position.x - 50}px`;
     this.div.style.top = `${this.body.position.y - 100}px`;
@@ -76,20 +77,20 @@ class Item {
 }
 
 function mouseMoved() {
+
   if (dist(mouseX, mouseY, lastMouseX, lastMouseY) > 10) {
     lastMouseX = mouseX;
     lastMouseY = mouseY;
 
     items.forEach((item) => {
-      console.log(
-        dist(mouseX, mouseY, item.body.position.x, item.body.position.y)
-      );
-
+      console.log(dist(mouseX, mouseY, item.body.position.x, item.body.position.y));
+      
       if (
-        dist(mouseX, mouseY, item.body.position.x, item.body.position.y) < 500
+        dist(mouseX, mouseY, item.body.position.x, item.body.position.y) < 1500//đây
       ) {
-        let forceMagnitude = 2;
-        console.log("aa");
+        console.log(1);
+
+        let forceMagnitude =3;
         Body.applyForce(
           item.body,
           {
