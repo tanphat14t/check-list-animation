@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://db.onlinewebfonts.com/c/1c87f20c55baa7eccc98b8603b5eecea?family=GrifinitoL"
+      rel="stylesheet"
+    />
+</head>
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(white, #efefef);
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 1em;
+  text-align: right;
+  color: #FFF;
+  text-transform: uppercase;
+  
+  width:  300px;
+  height: 400px;
+  box-shadow: 0 1px 5px #00000099;
+  
+  border-radius: 10px;
+  background-image: url(https://images.unsplash.com/photo-1603872113767-f91ed40cabeb?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  
+  position: relative;
+  
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+}
+
+.card:hover {
+  transition-duration: 150ms;
+  box-shadow: 0 5px 20px 5px #00000044;
+}
+
+.card .glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  
+  background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+}
+
+/* css button */
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  margin-top: 12vh;
+}
+
+.footer {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 15vh;
+}
+
+.button-container-1 {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh;
+  overflow: hidden;
+  border: 1px solid;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+.button-container-1 button {
+  width: 101%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #000;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(22) forwards;
+  animation: ani2 0.7s steps(22) forwards;
+}
+.button-container-1 button:hover {
+  -webkit-animation: ani 0.7s steps(22) forwards;
+  animation: ani 0.7s steps(22) forwards;
+}
+
+.button-container-2 {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7vh;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+.button-container-2 button {
+  width: 101%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #000;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+}
+.button-container-2 button:hover {
+  -webkit-animation: ani 0.7s steps(29) forwards;
+  animation: ani 0.7s steps(29) forwards;
+}
+
+.mas {
+  position: absolute;
+  color: #000;
+  text-align: center;
+  width: 101%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  position: absolute;
+  font-size: 11px;
+  margin-top: 17px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+a {
+  color: #00ff95;
+}
+
+.button-container-3 {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8vh;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+.button-container-3 button {
+  width: 101%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #000;
+  -webkit-mask: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png");
+  mask: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png");
+  -webkit-mask-size: 7100% 100%;
+  mask-size: 7100% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(70) forwards;
+  animation: ani2 0.7s steps(70) forwards;
+}
+.button-container-3 button:hover {
+  -webkit-animation: ani 0.7s steps(70) forwards;
+  animation: ani 0.7s steps(70) forwards;
+}
+
+/* wave */
+.wrapper-wave {
+  align-items: center;
+  display: flex;
+  height: 110px;
+  margin: 0 auto;
+  width: 110px;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+}
+
+.wrapper-wave svg{
+  margin: 0 auto; 
+  overflow: hidden;
+}
+
+#wave {
+  stroke-dasharray: 0 16 101 16;
+  animation: moveTheWave 2400ms linear infinite;
+  stroke: black;
+}
+
+@keyframes moveTheWave {
+  0% { 
+    stroke-dashoffset: 0; 
+    transform: translate3d(0, 0, 0);
+  }
+  100% { 
+    stroke-dashoffset: -133;
+    transform: translate3d(-90px, 0, 0);
+  }
+}
+
+/* blurry light */
+:root {
+  --blob-size: 600px;
+  --blob-speed: 8s;
+  --blob-speed-scale: calc(0.75 * var(--blob-speed));
+  --blob-speed-move: calc(1 * var(--blob-speed));
+  --blob-speed-rotate: calc(2 * var(--blob-speed));
+  --blob-opacity: 0.5;
+  --blob-blur: 80px;
+  --blob-color-1: hsl(304deg, 100%, 55%);
+  --blob-color-2: hsl(182deg, 100%, 55%);
+  --blob-color-3: hsl(216deg, 100%, 55%);
+}
+
+/* Blobs Styling */
+.blobs {
+  position: relative;
+  filter: blur(var(--blob-blur));
+}
+
+.blobs * {
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.blobs:after {
+  position: relative;
+  display: block;
+  width: 22rem;
+  height: 38rem;
+  background: hsla(0deg, 0%, 72%, 0.08);
+  backdrop-filter: blur(8rem) saturate(1.6);
+  border-radius: 1.5rem;
+  z-index: 2;
+}
+
+.blob {
+  width: var(--blob-size);
+  height: calc(0.25 * var(--blob-size));
+  background-color: var(--blob-color-1);
+  border-radius: 100%;
+  opacity: var(--blob-opacity);
+  mix-blend-mode: multiply;
+  animation: blob ease-in-out var(--blob-speed-scale) infinite;
+}
+
+.blobs > :nth-child(2) .blob {
+  background-color: var(--blob-color-2);
+  animation-delay: calc(-0.8 * var(--blob-speed-scale));
+}
+
+.blobs > :nth-child(3) .blob {
+  background-color: var(--blob-color-3);
+  animation-delay: calc(-0.2 * var(--blob-speed-scale));
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: scale(0.8, 2);
+  }
+  50% {
+    transform: scale(1.4, 0.8);
+  }
+}
+
+.blob-rotate {
+  position: absolute;
+  left: 140%;
+  top: 50%;
+  animation: blob-rotate linear var(--blob-speed-rotate) infinite alternate;
+}
+
+.blob-rotate:nth-child(2) {
+  animation-duration: calc(2 * var(--blob-speed-rotate));
+  animation-delay: calc(-1.5 * var(--blob-speed-rotate));
+}
+
+.blob-rotate:nth-child(3) {
+  animation-direction: alternate-reverse;
+  animation-duration: calc(0.8 * var(--blob-speed-rotate));
+  animation-delay: calc(-1 * var(--blob-speed-rotate));
+}
+
+@keyframes blob-rotate {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotateZ(-28deg);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotateZ(28deg);
+    transform-origin: 50% 0%;
+  }
+}
+
+.blob-move {
+  animation: blob-move ease-in-out var(--blob-speed-move) infinite;
+}
+
+.blobs > :nth-child(2) .blob-move {
+  animation-delay: calc(-0.8 * var(--blob-speed-move));
+}
+
+.blobs > :nth-child(3) .blob-move {
+  animation-delay: calc(-0.4 * var(--blob-speed-move));
+}
+
+@keyframes blob-move {
+  0%,
+  100% {
+    transform: translateX(40%);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+}
+
+/* Support Layer */
+.section-blobs {
+  display: grid;
+  place-content: center;
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+  line-height: 1.375;
+  color-scheme: dark light;
+  background-color: hsl(216deg, 100%, 2%);
+}
+
+.section-blobs .title{
+  font-size: 50px;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+/* animation text reveal */
+.lenis {
+  &.lenis-smooth {
+    scroll-behavior: auto;
+
+    [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+  }
+
+  &.lenis-stopped {
+    overflow: hidden;
+  }
+
+  &.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.reveal {
+  font-kerning: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 1.4;
+  font-family: "GrifinitoL";
+  letter-spacing: 0.8px;
+}
+</style>
+<body>
+    <section>
+        <div class="card">
+            3D Card
+            <div class="glow"></div>
+        </div>
+    </section>
+
+    <section style="flex-direction: column;">
+        <div class="header">CSS-MASK BUTTON HOVER ANIMATION 
+            ( Experimental )</div>
+        <div class="button-container-1">
+          <span class="mas">CONTACT US</span>
+        <button id='work' type="button" name="Hover">CONTACT US</button>
+        </div>
+    
+        <div class="button-container-2">
+            <span class="mas">MORE DETAILS</span>
+        <button type="button" name="Hover">MORE DETAILS</button>
+        </div>
+        
+        <div class="button-container-3">
+        <span class="mas">VIEW PROJECT</span>
+        <button type="button" name="Hover">VIEW PROJECT</button>
+        </div>
+    </section>
+
+    <section style="flex-direction: column;" class="section-blobs">
+      <h2 class="title">Contact Us</h2>
+      <div class="blobs" role="presentation">
+        <div class="blob-rotate">
+          <div class="blob-move">
+            <div class="blob"></div>
+          </div>
+        </div>
+        <div class="blob-rotate">
+          <div class="blob-move">
+            <div class="blob"></div>
+          </div>
+        </div>
+        <div class="blob-rotate">
+          <div class="blob-move">
+            <div class="blob"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="flex-direction: column; background-image: linear-gradient(to right, #2F586A, #1E121C);">
+      <div class="container">
+        <p class="reveal" style="color: white;">In the vastness of space, celestial bodies dance in harmony. Stars twinkle, planets orbit, and nebulas paint vibrant hues. Black holes exert their gravitational might, while comets streak by, leaving stardust in their wake.</p>
+      </div>
+    </section>
+
+    <div class="wrapper-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+          width="50px" height="50px"
+          viewBox="5 0 80 60">
+          <path id="wave" 
+              fill="none" 
+              stroke="#262626" 
+              stroke-width="4"
+              stroke-linecap="round">
+          </path>
+      </svg>
+    </div>
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+</body>
+<script>
+  const $card = document.querySelector('.card');
+  let bounds;
+
+  function rotateToMouse(e) {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const leftX = mouseX - bounds.x;
+    const topY = mouseY - bounds.y;
+    const center = {
+      x: leftX - bounds.width / 2,
+      y: topY - bounds.height / 2
+    }
+    const distance = Math.sqrt(center.x**2 + center.y**2);
+    
+    $card.style.transform = `
+      scale3d(1.07, 1.07, 1.07)
+      rotate3d(
+        ${center.y / 100},
+        ${-center.x / 100},
+        0,
+        ${Math.log(distance)* 2}deg
+      )
+    `;
+    
+    $card.querySelector('.glow').style.backgroundImage = `
+      radial-gradient(
+        circle at
+        ${center.x * 2 + bounds.width/2}px
+        ${center.y * 2 + bounds.height/2}px,
+        #ffffff55,
+        #0000000f
+      )
+    `;
+  }
+
+  $card.addEventListener('mouseenter', () => {
+    bounds = $card.getBoundingClientRect();
+    document.addEventListener('mousemove', rotateToMouse);
+  });
+
+  $card.addEventListener('mouseleave', () => {
+    document.removeEventListener('mousemove', rotateToMouse);
+    $card.style.transform = '';
+    $card.style.background = '';
+  });
+
+
+  // wave
+  const path = document.querySelector('#wave');
+  const animation = document.querySelector('#moveTheWave');
+  const m = 0.512286623256592433;
+
+  function buildWave(w, h) {
+    
+    const a = h / 4;
+    const y = h / 2;
+    
+    const pathData = [
+      'M', w * 0, y + a / 2, 
+      'c', 
+        a * m, 0,
+        -(1 - a) * m, -a, 
+        a, -a,
+      's', 
+        -(1 - a) * m, a,
+        a, a,
+      's', 
+        -(1 - a) * m, -a,
+        a, -a,
+      's', 
+        -(1 - a) * m, a,
+        a, a,
+      's', 
+        -(1 - a) * m, -a,
+        a, -a,
+      
+      's', 
+        -(1 - a) * m, a,
+        a, a,
+      's', 
+        -(1 - a) * m, -a,
+        a, -a,
+      's', 
+        -(1 - a) * m, a,
+        a, a,
+      's', 
+        -(1 - a) * m, -a,
+        a, -a,
+      's', 
+        -(1 - a) * m, a,
+        a, a,
+      's', 
+        -(1 - a) * m, -a,
+        a, -a,
+      's', 
+        -(1 - a) * m, a,
+        a, a,
+      's', 
+        -(1 - a) * m, -a,
+        a, -a,
+      's', 
+        -(1 - a) * m, a,
+        a, a,
+      's', 
+        -(1 - a) * m, -a,
+        a, -a
+    ].join(' ');
+    
+    path.setAttribute('d', pathData);
+  }
+
+  buildWave(90, 60);
+
+  // Reveal text animation
+  gsap.registerPlugin(ScrollTrigger);
+  let revealAnimations = [];
+
+  const lenis = new Lenis({
+    lerp: 0.07
+  });
+
+  lenis.on('scroll', ScrollTrigger.update)
+  gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+  })
+
+  document.querySelectorAll('.reveal').forEach(text => {
+    let splitText = new SplitType(text, {
+      type: 'words'
+    })
+
+    const section = text.closest('section');
+    gsap.from(splitText.words, {
+      opacity: 0,
+      ease: 'none',
+      stagger: 1,
+      duration: 5,
+      scrollTrigger: {
+        trigger: section,
+        start: 'top top', 
+        end: () => `+=${window.innerHeight * 5}px`,
+        scrub: true,
+        // markers: true,
+        pin: true,
+      }
+    })
+  })
+</script>
+</html>

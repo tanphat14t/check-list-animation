@@ -1,0 +1,112 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "GrifinitoL";
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+section.hero-img,
+section.about-img {
+  height: 200vh;
+}
+.hero {
+  background-color: #6a5af9;
+}
+.about {
+  background-color: aqua;
+}
+
+.footer {
+  background-color: #eee;
+}
+section img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+section h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  color: aliceblue;
+  letter-spacing: 4px;
+}
+.blocks-container {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+}
+.blocks-container.top {
+  top: 0;
+}
+.blocks-container.bottom {
+  bottom: 0;
+}
+.blocks-row {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+}
+.block {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.1s;
+}
+
+.blocks-container.top .blocks-row .block {
+  opacity: 1;
+}
+.blocks-container.bottom .blocks-row .block {
+  opacity: 0;
+}
+
+.hero-img .blocks-container.top .blocks-row .block {
+  background-color: #6a5af9;
+}
+.hero-img .blocks-container.bottom .blocks-row .block {
+  background-color: aqua;
+}
+
+.about-img .blocks-container.top .blocks-row .block {
+  background-color: aqua;
+}
+.about-img .blocks-container.bottom .blocks-row .block {
+  background-color: #eee;
+}

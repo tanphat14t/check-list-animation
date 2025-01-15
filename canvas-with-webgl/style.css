@@ -1,0 +1,59 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+}
+section.a {
+  height: 100vh;
+  background-color: #fff;
+}
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+section.b {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+section.b h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 9;
+  font-family: "GrifinitoL";
+  font-size: 190px;
+}

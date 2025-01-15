@@ -1,0 +1,84 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "GrifinitoL";
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+::selection {
+  color: #fff;
+  background-color: transparent;
+}
+body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.spacing {
+  height: 100vh;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+section.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.container-content {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  width: 100%;
+  height: 100vh;
+}
+.hero-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.hero-copy h1 {
+  font-size: 100px;
+  line-height: 1;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.hero-copy p {
+  color: #fff;
+}
+#heroVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100vh;
+}

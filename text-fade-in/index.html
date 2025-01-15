@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://db.onlinewebfonts.com/c/1c87f20c55baa7eccc98b8603b5eecea?family=GrifinitoL"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="spacing"></div>
+    <section>
+      <div class="text">
+        <p>
+          We empower exceptional teams and companies in healthcare and
+          healthtech
+        </p>
+      </div>
+    </section>
+    <div class="spacing"></div>
+
+    <div class="spacing"></div>
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger, SplitType);
+
+      // Tách văn bản thành từng dòng
+      const split = new SplitType(".text p", {
+        type: "lines", // Tách văn bản theo dòng
+      });
+
+      // Áp dụng animation cho từng dòng
+      split.lines.forEach((line, index) => {
+        gsap.fromTo(
+          line, // Nhắm mục tiêu trực tiếp vào từng dòng
+          {
+            opacity: 0,
+            filter: "blur(10px)",
+            y: 50, // Di chuyển từ dưới lên
+          },
+          {
+            opacity: 1,
+            filter: "blur(0px)",
+            y: 0,
+            duration: 1.5,
+            ease: "power3.out",
+
+            scrollTrigger: {
+              trigger: line, // Kích hoạt dựa trên từng dòng
+              start: "top 80%",
+              end: "top 20%",
+              scrub: 0.5, // Điều chỉnh scrub để animation mượt mà hơn
+              markers: true, // Tắt markers sau khi kiểm tra
+            },
+            // Thêm stagger để các dòng xuất hiện dần dần
+            stagger: 0.1 * index, // Thêm độ trễ để các dòng xuất hiện từ từ
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.button-one {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(18, 226, 255);
+  text-decoration: none;
+  animation: gradient-animation 8s ease infinite;
+  animation-play-state: paused;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 226, 255, 0.3),
+    rgba(18, 226, 255, 0),
+    rgba(18, 226, 255, 0.2),
+    rgba(18, 226, 255, 0),
+    rgba(18, 226, 255, 0.3)
+  );
+  background-size: 400% 100%;
+}
+.button-one:hover {
+  animation-play-state: running;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.button-one span {
+  color: aqua;
+  text-decoration: none;
+}
+@property --r {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.button-two {
+  position: relative;
+  background: conic-gradient(from var(--r), #222 0%, aqua 10%, #222 20%);
+  animation: rotating 3s linear infinite;
+  border-radius: 20px;
+  padding: 10px 20px;
+  min-width: 113px;
+  height: 38px;
+}
+.button-two::after {
+  content: "";
+  display: block;
+  position: absolute;
+  /* background: rgba(0, 0, 0, 0.3); */
+  background-color: #000;
+  inset: 2px;
+  border-radius: 45px;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes rotating {
+  0% {
+    --r: 0deg;
+  }
+  100% {
+    --r: 360deg;
+  }
+}
+.button-two a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 2;
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s;
+}
+.button-two:hover a {
+  color: aqua;
+}
+.button-two:hover::after {
+  opacity: 0.5;
+}

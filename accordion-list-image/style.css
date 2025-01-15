@@ -1,0 +1,107 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "GrifinitoL";
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  background-color: #0c1016;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-card-wrapper {
+  max-width: 70%;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.flex-card-wrapper .flex-card-container {
+  width: 14%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 450ms all ease-in-out;
+  position: relative;
+}
+.flex-card-wrapper .flex-card-container.active {
+  width: 100%;
+}
+.flex-card-wrapper .flex-card-container.active .overlay h3,
+.flex-card-wrapper .flex-card-container.active .overlay p {
+  opacity: 1;
+  transform: translateX(0);
+}
+.flex-card-wrapper .flex-card-container .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 8rem;
+  padding: 0 0 2rem 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  transition: 450ms all ease-in-out;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.flex-card-wrapper .flex-card-container .overlay h3 {
+  top: 0;
+  font-size: 50px;
+  margin: 0;
+  transition: 350ms 200ms all ease-in-out;
+}
+
+.flex-card-wrapper .flex-card-container .overlay p {
+  bottom: 20px;
+  font-size: 25px;
+  margin: 0;
+  transition: 350ms 300ms all ease-in-out;
+}
+
+.flex-card-wrapper .flex-card-container .overlay h3,
+.flex-card-wrapper .flex-card-container .overlay p {
+  color: white;
+  position: absolute;
+  width: 20rem;
+  opacity: 0;
+  transform: translateX(-15px);
+}

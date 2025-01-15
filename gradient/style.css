@@ -1,0 +1,47 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 600px;
+  height: 400px;
+  border: 6px solid transparent;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fce9c1 0%, #fffaf0 100%) padding-box,
+    linear-gradient(180deg, #faae18 0%, rgba(250, 174, 24, 0.38) 100%)
+      border-box;
+
+  /* border-box là màu của viền border */
+  /* padding-box là màu nền bên trong k tính border */
+}

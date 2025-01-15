@@ -1,0 +1,107 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "GrifinitoL";
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #131313;
+}
+.slider {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.slider .slide-titles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300vw;
+  height: 100vh;
+  display: flex;
+  pointer-events: none;
+  z-index: 2;
+}
+.slider .slide-titles .title {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider .slide-titles .title h1 {
+  text-align: center;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+.active h1 {
+  color: white;
+}
+
+.slide-images {
+  width: 550px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: all;
+  opacity: 0.5;
+}
+.img-top {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(85% 0%, 0% 0%, 0% 50%, 85% 50%);
+  transition: clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.img-bottom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 50%, 15% 50%, 15% 100%, 100% 100%);
+  transition: clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide-images:hover .img-top {
+  clip-path: polygon(90% 0%, 10% 0%, 10% 50%, 90% 50%);
+}
+.slide-images:hover .img-bottom {
+  clip-path: polygon(90% 50%, 10% 50%, 10% 100%, 90% 100%);
+}

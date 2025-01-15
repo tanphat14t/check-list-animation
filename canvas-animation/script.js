@@ -86,11 +86,11 @@ function mouseMoved() {
       console.log(dist(mouseX, mouseY, item.body.position.x, item.body.position.y));
       
       if (
-        dist(mouseX, mouseY, item.body.position.x, item.body.position.y) < 1500//đây
+        dist(mouseX, mouseY, item.body.position.x, item.body.position.y) < 700 //đây
       ) {
         console.log(1);
 
-        let forceMagnitude =3;
+        let forceMagnitude = 1;
         Body.applyForce(
           item.body,
           {

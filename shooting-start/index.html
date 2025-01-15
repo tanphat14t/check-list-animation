@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .main {
+      background: black;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .shooting-star {
+      height: 100%;
+      left: 25%;
+      position: absolute;
+      top: 0;
+      width: 50%;
+    }
+
+    .speed-line {
+      animation-duration: 7s;
+      animation-iteration-count: infinite;
+      animation-name: lightspeed;
+      animation-timing-function: ease-in-out;
+      background: linear-gradient(
+        0deg,
+        #000,
+        #84b1ff 10%,
+        #fff 28%,
+        #f6f6f6 55%,
+        #c2dea0 71%,
+        #9f2b56 87%,
+        #000
+      );
+      bottom: 100%;
+      height: 10rem;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    @keyframes lightspeed {
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+
+      12% {
+        opacity: 100%;
+      }
+
+      25% {
+        opacity: 100%;
+      }
+
+      38% {
+        opacity: 100%;
+      }
+
+      50% {
+        opacity: 0;
+        transform: translateY(1000%);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(1000%);
+      }
+    }
+  </style>
+
+  <body>
+    <div class="main">
+      <div class="shooting-star" data-count="20"></div>
+    </div>
+    <script>
+      const shootingStar = document.querySelectorAll(".shooting-star");
+      shootingStar.forEach((element, index) => {
+        const count = element.dataset.count;
+        console.log(count);
+
+        for (let i = 0; i < count; i++) {
+          const leftValue = Math.random() * 60 + 10; // Zufallswert zwischen 10% und 70%
+          const bottomValue = Math.random() * 30 + 80; // Zufallswert zwischen 80% und 110%
+          const animationDelayValue = Math.random() * 15; // Zufallswert zwischen 0s und 45s
+
+          // Neues Div-Element erstellen
+          const speedLine = document.createElement("div");
+          speedLine.className = "speed-line";
+          speedLine.style.left = `${leftValue}%`;
+          speedLine.style.bottom = `${bottomValue}%`;
+          speedLine.style.animationDelay = `${animationDelayValue}s`;
+
+          // Neues Element zum aktuellen Element hinzufügen
+          element.appendChild(speedLine);
+        }
+      });
+    </script>
+  </body>
+</html>
