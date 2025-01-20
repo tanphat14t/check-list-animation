@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animate</title>
     <link
       href="https://db.onlinewebfonts.com/c/1c87f20c55baa7eccc98b8603b5eecea?family=GrifinitoL"
       rel="stylesheet"
@@ -478,6 +478,52 @@ a {
   font-family: "GrifinitoL";
   letter-spacing: 0.8px;
 }
+
+/* hover line animate */
+.tab-items {
+  list-style: none;
+  text-align: center;
+  height: auto;
+  max-height: 220px;
+  display: flex;
+  width: max-content;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.25s;
+  text-transform: uppercase;
+  color: #71828a;
+}
+.tab-items:hover {
+  color: #FFF;
+  transition: color 0.25s;
+}
+.tab-items.active {
+  color: #FFF;
+  transition: color 0.25s;
+}
+.li-wrapper {
+  width: max-content;
+  max-width: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: auto;
+  /* border-bottom: 1px solid #71828a; */
+  flex-wrap: wrap;
+}
+.tab-container-header .line {
+  position: absolute;
+  bottom: -2px;
+  height: 3px;
+  background-color: #FFF;
+  min-width: 30px;
+  transition: all 0.5s ease-in-out;
+}
 </style>
 <body>
     <section>
@@ -533,6 +579,17 @@ a {
       </div>
     </section>
 
+    <section style="flex-direction: column; background-image: linear-gradient(to right, #000, #1E121C);">
+      <div class="li-wrapper tab-container-header">
+        <li class="tab-items active">Radiohead</li>
+        <li class="tab-items">Porches</li>
+        <li class="tab-items">The Ocean</li>
+        <li class="tab-items">Confidence Man</li>
+        <li class="tab-items">Let's eat grandma</li>
+        <div class="line"></div>
+      </div>
+    </section>
+
     <div class="wrapper-wave">
       <svg xmlns="http://www.w3.org/2000/svg" 
           width="50px" height="50px"
@@ -545,6 +602,7 @@ a {
           </path>
       </svg>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -698,5 +756,66 @@ a {
       }
     })
   })
+
+// hover line animate
+"use strict";
+$ = jQuery;
+var line = $('.li-wrapper .line');
+var tabs = $('.tab-items');
+
+/* initial */
+setAttributes();
+tabActive('active');
+
+/* on resize initialise again */
+$( window ).resize(function() {
+  setAttributes();
+  tabActive('active');
+});
+
+
+/* Set active-state */
+tabs.click(function(){
+  tabs.removeClass('active');
+  $(this).addClass('active');
+});
+
+/* Class at hover */
+tabs.hover(
+  function(){
+    $(this).addClass('hover')
+    tabActive('hover');
+  },
+  function(){
+    $(this).removeClass('hover')
+    tabActive('active');
+  }
+)
+
+/* moving line function */
+function tabActive(ff){
+  indexNo = $('.tab-items.'+ff).attr('data-element-number');
+  width = $('.tab-items.'+ff).attr('data-length');
+  leftspace = $('.tab-items.'+ff).attr('data-left-space');
+  line.css('left', leftspace + 'px');
+  line.css('width', width + 'px');
+}
+
+/* set Attributes */
+function setAttributes(){
+  var i = 0;
+  
+  tabs.each(function(){
+    i++;
+    var el = $(this);
+    var positionLeft = el.position();
+    var elementWidth = el.outerWidth();
+    
+    el.attr('data-element-number', i);
+    el.attr('data-left-space', positionLeft.left);
+    el.attr('data-length', elementWidth);
+  });
+}
+// https://codepen.io/BieniekThomas/pen/JBBVwx
 </script>
 </html>

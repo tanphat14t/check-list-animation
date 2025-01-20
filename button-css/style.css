@@ -126,3 +126,33 @@ body {
 .button-two:hover::after {
   opacity: 0.5;
 }
+.btn-wave {
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 1px solid aqua;
+  color: aqua;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background: url("https://wweb.dev/resources/creative-hover-effects/wave.svg")
+    repeat-x #000;
+
+  background-position: bottom;
+  background-size: 0% 0%;
+  animation: waveAnimation 4s infinite linear;
+  animation-play-state: paused;
+  transition: all 0.4s;
+}
+.btn-wave:hover {
+  animation-play-state: running;
+  background-size: 200% 40%;
+}
+@keyframes waveAnimation {
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: 200%;
+  }
+}
