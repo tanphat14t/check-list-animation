@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="spacer green"></div>
+    <div class="wrapper light">
+      <div class="cards">
+        <div class="card-wrapper">
+          <div class="card red">Card 1</div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card blue">Card 2</div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card orange">Card 3</div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card purple">Card 4</div>
+        </div>
+        <div class="card-wrapper transparent_card">
+          <div class="card purple">transparent</div>
+        </div>
+      </div>
+    </div>
+    <div class="spacer green"></div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script>
+      console.clear();
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const cardsWrappers = gsap.utils.toArray(".card-wrapper");
+      const cards = gsap.utils.toArray(".card");
+
+      cardsWrappers.forEach((wrapper, i) => {
+        const card = cards[i];
+        let scale = 1,
+          rotation = 0;
+        if (i !== cards.length - 1) {
+          scale = 0.9 + 0.025 * i;
+          rotation = -10;
+        }
+        gsap.to(card, {
+          scale: scale,
+          rotationX: rotation,
+          transformOrigin: "top center",
+          ease: "none",
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top " + (100 + 10 * i),
+            end: "bottom 550",
+            endTrigger: ".wrapper",
+            scrub: true,
+            pin: wrapper,
+            pinSpacing: false,
+            markers: {
+              indent: 150 * i,
+            },
+            id: i + 1,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -40,3 +40,17 @@
 <!-- https://codepen.io/mKaran243/pen/xxWOZqX -->
 
 https://codepen.io/maeolive/pen/ExqrZPL
+
+<!-- multi scroll -->
+<!-- https://codepen.io/ux-designer22/full/abRgXoP -->
+
+hover text
+
+<!-- https://gsap.com/community/forums/topic/38710-how-to-create-gsap-hover-split-text/ -->
+
+cursor mouse trail
+https://codepen.io/th-akash/pen/vYzOJgR
+
+<!-- hover circle  -->
+
+https://codepen.io/wifidev/pen/GYGwpv

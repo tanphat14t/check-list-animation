@@ -1,0 +1,75 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+.gallery {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  gap: 24px;
+  pointer-events: none;
+}
+
+.gallery-col {
+  width: 300px;
+}
+.gallery-col .img {
+  width: 300px;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.gallery-col .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+.swiper {
+  width: 300px;
+  height: 100vh;
+  margin: 0;
+}
+.swiper-slide {
+  height: 300px;
+}

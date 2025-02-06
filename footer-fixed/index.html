@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <div class="content-wrapper">Content</div>
+        <div class="extra-space"></div>
+      </div>
+    </div>
+
+    <footer class="footer">Footer</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+
+    <!-- Include ScrollTrigger Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.set(".footer", {
+        y: -500,
+      });
+      gsap.to(".footer", {
+        y: 0, // Move the footer to its original position
+        scrollTrigger: {
+          trigger: ".footer", // Trigger the animation when .footer enters the viewport
+          start: "top bottom", // When the top of the footer reaches the bottom of the viewport
+          end: "bottom top", // When the bottom of the footer reaches the top of the viewport
+          scrub: 1, // Smooth the animation during scrolling
+          markers: true, // Enable markers for debugging
+        },
+      });
+    </script>
+  </body>
+</html>

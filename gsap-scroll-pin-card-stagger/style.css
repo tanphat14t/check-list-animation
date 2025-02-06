@@ -29,33 +29,19 @@ button {
 }
 body {
   min-height: 100vh;
-  width: 100%;
   background-color: #000;
-  overflow-x: hidden;
 }
 .spacing {
   height: 100vh;
 }
-.scroll-item .item {
-  will-change: clip-path, opacity;
+
+.item {
+  background-color: blueviolet;
+  width: calc((100% - 64px) / 3);
+  height: 500px;
   transform-origin: bottom;
-}
-.slider-wrapper {
 }
 .scroll-item {
   display: flex;
-  /* width: 150%; */
-  /* gap: 12px; */
-}
-.scroll-content {
-  height: 200px;
-  width: 600px;
-  background-color: aqua;
-  margin-bottom: 140px;
-}
-.scroll-item .item {
-  min-width: 25%;
-  height: 400px;
-  /* background: linear-gradient(135deg, #080e1d 0%, #212b3a 80%); */
-  background-color: #fff;
+  gap: 24px;
 }

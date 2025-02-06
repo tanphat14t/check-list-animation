@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.spacer,
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wrapper {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.card-wrapper {
+  width: 100%;
+  perspective: 500px;
+  margin-bottom: 50px;
+}
+.card-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.cards {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.card {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.transparent_card {
+  opacity: 1;
+}
+.green {
+  background-color: green;
+}
+.purple {
+  background-color: purple;
+}
+.orange {
+  background-color: orange;
+}
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
